@@ -4,17 +4,13 @@ namespace Projeto\DesignPatterns;
 
 use Projeto\DesignPatterns\Descontos\DescontoMais500Reais;
 use Projeto\DesignPatterns\Descontos\DescontoMais5Itens;
+use Projeto\DesignPatterns\Descontos\SemDesconto;
 
 class CalculadoraDescontos
 {
     public function calculaDescontos(Orcamento $orcamento): float
     {
-        $desconto5Itens = new DescontoMais5Itens();
-        $desconto = $desconto5Itens->calculaDesconto($orcamento);
-        if ($desconto === 0) {
-            $desconto500Reais = new DescontoMais500Reais();
-            $desconto = $desconto500Reais->calculaDesconto($orcamento);
-        }
+        $cadeiaDeDescontos = new DescontoMais5Itens(new DescontoMais500Reais(new SemDesconto));
 
         return $desconto;
     }
