@@ -4,14 +4,20 @@ namespace Projeto\DesignPatterns\Impostos;
 
 use Projeto\DesignPatterns\Orcamento;
 
-class PIS implements Imposto
+class PIS extends Imposto2Aliquotas
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    protected function deveAplicarTaxaMaxima(Orcamento $orcamento): bool
     {
-        if ($orcamento->valor > 500) {
-            return $orcamento->valor * 0.03;
-        }
+        return $orcamento->valor > 600 && $orcamento->quantidadeItens > 5;
+    }
 
+    protected function calculaTaxaMaxima(Orcamento $orcamento): float
+    {
+        return $orcamento->valor * 0.03;
+    }
+
+    protected function calculaTaxaMinima(Orcamento $orcamento): float
+    {
         return $orcamento->valor * 0.015;
     }
 }

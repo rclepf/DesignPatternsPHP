@@ -4,14 +4,20 @@ namespace Projeto\DesignPatterns\Impostos;
 
 use Projeto\DesignPatterns\Orcamento;
 
-class COFINS implements Imposto
+class COFINS extends Imposto2Aliquotas
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    protected function deveAplicarTaxaMaxima(Orcamento $orcamento): bool
     {
-        if ($orcamento->valor > 600 && $orcamento->quantidadeItens > 3) {
-            return $orcamento->valor * 0.07;
-        }
+        return $orcamento->valor > 1000;
+    }
 
-        return $orcamento->valor * 0.1;
+    protected function calculaTaxaMaxima(Orcamento $orcamento): float
+    {
+        return $orcamento->valor * 0.08;
+    }
+
+    protected function calculaTaxaMinima(Orcamento $orcamento): float
+    {
+        return $orcamento->valor * 0.05;
     }
 }
