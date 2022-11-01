@@ -12,6 +12,6 @@ class CalculadoraDescontos
     {
         $cadeiaDeDescontos = new DescontoMais5Itens(new DescontoMais500Reais(new SemDesconto));
 
-        return $desconto;
+        return $cadeiaDeDescontos->calculaDesconto($orcamento);
     }
 }
