@@ -29,7 +29,7 @@ class Orcamento
     {
         $this->estadoAtual->reprova($this);
     }
-    
+
     public function finaliza()
     {
         $this->estadoAtual->finaliza($this);
