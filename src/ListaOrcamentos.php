@@ -2,17 +2,24 @@
 
 namespace Projeto\DesignPatterns;
 
-class ListaOrcamentos
+use Traversable;
+
+class ListaOrcamentos implements \IteratorAggregate
 {
+    /** @var Orcamento */
     private array $orcamentos;
 
+    public function __construct()
+    {
+        $this->orcamentos = [];
+    }
     public function addOrcamento(Orcamento $orcamento)
     {
         $this->orcamentos[] = $orcamento;
     }
 
-    public function orcamentos(): array
+    public function getIterator(): Traversable
     {
-        return $this->orcamentos;
+        return new \ArrayIterator($this->orcamentos);
     }
 }

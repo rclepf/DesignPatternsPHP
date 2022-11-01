@@ -1,7 +1,6 @@
 <?php
 
-use Projeto\DesignPatterns\ListaOrcamentos;
-use Projeto\DesignPatterns\Orcamento;
+use Projeto\DesignPatterns\{ListaOrcamentos, Orcamento};
 
 require_once 'vendor/autoload.php';
 
@@ -40,6 +39,7 @@ $listaOrcamentos->addOrcamento($orcamento2);
 $listaOrcamentos->addOrcamento($orcamento3);
 $listaOrcamentos->addOrcamento($orcamento4);
 $listaOrcamentos->addOrcamento($orcamento5);
+
 
 foreach ($listaOrcamentos as $orcamento) {
     echo "Valor: " . $orcamento->valor . PHP_EOL;
