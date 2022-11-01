@@ -3,9 +3,6 @@
 namespace Projeto\DesignPatterns;
 
 use Projeto\DesignPatterns\AcoesGerarPedido\AcaoAposGerarPedido;
-use Projeto\DesignPatterns\AcoesGerarPedido\CriarPedidoBanco;
-use Projeto\DesignPatterns\AcoesGerarPedido\EnviarPedidoPorEmail;
-use Projeto\DesignPatterns\AcoesGerarPedido\LogGerarPedido;
 
 class GerarPedidoHandler
 {

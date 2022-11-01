@@ -2,9 +2,7 @@
 
 namespace Projeto\DesignPatterns;
 
-use Projeto\DesignPatterns\Descontos\DescontoMais500Reais;
-use Projeto\DesignPatterns\Descontos\DescontoMais5Itens;
-use Projeto\DesignPatterns\Descontos\SemDesconto;
+use Projeto\DesignPatterns\Descontos\{DescontoMais500Reais, DescontoMais5Itens, SemDesconto};
 
 class CalculadoraDescontos
 {

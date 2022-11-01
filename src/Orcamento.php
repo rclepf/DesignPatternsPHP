@@ -2,8 +2,7 @@
 
 namespace Projeto\DesignPatterns;
 
-use Projeto\DesignPatterns\EstadosOrcamentos\EmAprovacao;
-use Projeto\DesignPatterns\EstadosOrcamentos\EstadoOrcamento;
+use Projeto\DesignPatterns\EstadosOrcamentos\{EmAprovacao, EstadoOrcamento};
 
 class Orcamento
 {

@@ -2,11 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-use Projeto\DesignPatterns\CalculadoraDescontos;
-use Projeto\DesignPatterns\CalculadoraImpostos;
-use Projeto\DesignPatterns\Impostos\ICMS;
-use Projeto\DesignPatterns\Impostos\IPI;
-use Projeto\DesignPatterns\Orcamento;
+use Projeto\DesignPatterns\{CalculadoraDescontos, Orcamento};
 
 /* $calculadora = new CalculadoraImpostos();
 

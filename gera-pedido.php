@@ -2,10 +2,8 @@
 
 require_once 'vendor/autoload.php';
 
-use Projeto\DesignPatterns\{GerarPedido, GerarPedidoHandler, Orcamento, Pedido};
-use Projeto\DesignPatterns\AcoesGerarPedido\CriarPedidoBanco;
-use Projeto\DesignPatterns\AcoesGerarPedido\EnviarPedidoPorEmail;
-use Projeto\DesignPatterns\AcoesGerarPedido\LogGerarPedido;
+use Projeto\DesignPatterns\{GerarPedido, GerarPedidoHandler};
+use Projeto\DesignPatterns\AcoesGerarPedido\{CriarPedidoBanco, EnviarPedidoPorEmail, LogGerarPedido};
 
 $valorOrcamento = $argv[1];
 $numeroDeItens = $argv[2];
