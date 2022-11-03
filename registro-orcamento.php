@@ -1,9 +1,9 @@
 <?php
 
-use Projeto\DesignPatterns\HTTP\CurlHttpAdapter;
 use Projeto\DesignPatterns\{Orcamento, RegistroOrcamento};
+use Projeto\DesignPatterns\HTTP\ReactPHPHttpAdapter;
 
 require_once 'vendor/autoload.php';
 
-$registroOrcamento = new RegistroOrcamento(new CurlHttpAdapter());
+$registroOrcamento = new RegistroOrcamento(new ReactPHPHttpAdapter());
 $registroOrcamento->registrar(new Orcamento());
