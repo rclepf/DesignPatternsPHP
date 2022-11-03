@@ -1,5 +1,6 @@
 <?php
 
+use Projeto\DesignPatterns\CacheOrcamentoProxy;
 use Projeto\DesignPatterns\ItemOrcamento;
 use Projeto\DesignPatterns\Orcamento;
 
@@ -36,4 +37,11 @@ $orcamentoMuitoAntigo->addItem($item6);
 
 $orcamentoAntigo->addItem($orcamentoMuitoAntigo);
 
-echo $orcamento->valor();
+$proxyCache = new CacheOrcamentoProxy($orcamento);
+
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
+echo $proxyCache->valor() . PHP_EOL;
