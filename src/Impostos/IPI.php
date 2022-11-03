@@ -4,9 +4,9 @@ namespace Projeto\DesignPatterns\Impostos;
 
 use Projeto\DesignPatterns\Orcamento;
 
-class IPI implements Imposto
+class IPI extends Imposto
 {
-    public function calculaImposto(Orcamento $orcamento): float
+    public function realizaCalculoEspecifico(Orcamento $orcamento): float
     {
         return $orcamento->valor * 0.07;
     }
