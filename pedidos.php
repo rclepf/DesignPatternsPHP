@@ -1,22 +1,22 @@
 <?php
 
-use Projeto\DesignPatterns\DadosExtrinsecos;
 use Projeto\DesignPatterns\Orcamento;
-use Projeto\DesignPatterns\Pedido;
+use Projeto\DesignPatterns\Pedido\CriadorPedido;
 
 require 'vendor/autoload.php';
 
 $pedidos = [];
-$dados = new DadosExtrinsecos();
-$dados->dataFinalizacao = new \DateTimeImmutable();
-$dados->nomeCliente = md5((string) rand(1, 10000));
+$criadorPedido = new CriadorPedido();
 
-for ($i = 0; $i < 10000; $i++){
-    $pedido = new Pedido();
-    $pedido->dados = $dados;
-    $pedido->orcamento = new Orcamento();
+for ($i = 0; $i < 10000; $i++) {
+    $orcamento = new Orcamento();
+    $pedido = $criadorPedido->criaPedido(
+        'Rodolfo Clepf',
+        date('Y-m-d'),
+        $orcamento
+    );
 
-    $pedidos [] = $pedido;
+    $pedidos[] = $pedido;
 }
 
 echo memory_get_peak_usage();
