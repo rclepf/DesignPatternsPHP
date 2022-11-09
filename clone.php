@@ -3,9 +3,7 @@
 require 'vendor/autoload.php';
 
 use Projeto\DesignPatterns\ItemOrcamento;
-use Projeto\DesignPatterns\NotaFiscal\ConstrutorNotaFiscalProduto;
 use Projeto\DesignPatterns\NotaFiscal\ConstrutorNotaFiscalServico;
-use Projeto\DesignPatterns\NotaFiscal\ContrutorNotaFiscal;
 
 $builder = new ConstrutorNotaFiscalServico();
 
@@ -23,5 +21,10 @@ $notafiscal = $builder->paraEmpresa('555555', 'Rodolfo')
     ->comObservacoes('Essa NF foi criada com Construtor')
     ->constroi();
 
-echo $notafiscal->valor() . PHP_EOL;
-echo $notafiscal->valorImpostos . PHP_EOL;
+/* echo $notafiscal->valor() . PHP_EOL;
+echo $notafiscal->valorImpostos . PHP_EOL; */
+
+$notafiscal2 = clone $notafiscal;
+$notafiscal2->itens[] = new ItemOrcamento();
+
+var_dump($notafiscal2, $notafiscal);
